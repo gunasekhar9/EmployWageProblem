@@ -8,7 +8,7 @@ namespace EmployeeWageProblem
         {
             Console.WriteLine("Welcome to the Employee Wage Computation Problem");
             EmployeeWageProblem employee = new EmployeeWageProblem();
-            employee.DailyEmployeeWage();
+            employee.MonthlyEmployeeWage();
         }
     }
 }
