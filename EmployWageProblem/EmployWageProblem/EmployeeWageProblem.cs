@@ -6,11 +6,11 @@ namespace EmployeeWageProblem
 {
     public class EmployeeWageProblem
     {
-        public const int IS_PART_TIME = 1, IS_FULL_TIME = 2;
-        public static int MonthlyEmployeeWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        public const int IS_PART_TIME = 1, IS_FULL_TIME = 2, EMP_RATE_PER_HOUR = 20, NUM_OF_WORKING_DAYS = 20, MAX_HRS_IN_MONTH = 100;
+        int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0, totalEmpWage;
+        public void MonthlyEmployeeWage()
         {
-            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0, totalEmpWage;
-            while (totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
+            while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -28,11 +28,11 @@ namespace EmployeeWageProblem
                         break;
                 }
                 totalEmpHrs += empHrs;
-                Console.WriteLine("Day#:" + totalWorkingDays + " Employee Hours : " + empHrs);
+                Console.WriteLine("Day:" + totalWorkingDays + " Employee Hours : " + empHrs);
             }
-            totalEmpWage = totalEmpHrs * empRatePerHour;
-            Console.WriteLine(company + " Total Employee Wage : " + totalEmpWage);
-            return totalEmpWage;
+            totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
+            Console.WriteLine("Total Employee Wage : " + totalEmpWage);
+
         }
     }
 }
